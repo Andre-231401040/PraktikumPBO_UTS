@@ -2,12 +2,19 @@ package soal1;
 
 import java.util.Scanner;
 
+// deklarasi class Main
 public class Main {
+    // fungsi utama yang dijalankan ketika program dirun
     public static void main(String[] args) {
         int id = 0, option;
+        // membuat objek dari class Perusahaan
         Perusahaan perusahaan = new Perusahaan();
 
         do {
+            // try {} catch() {} untuk error handling
+            // try {program yang dijalankan ketika tidak ada error} catch() {program yang dijalankan ketika ada error}
+
+            // menjalankan fitur sistem yang sesuai pilihan pengguna
             try {
                 int idKaryawan;
                 Scanner scanner = new Scanner(System.in);
@@ -39,6 +46,7 @@ public class Main {
                             System.out.print("Masukkan Gaji : ");
                             gaji = Float.parseFloat(scanner.nextLine());
 
+                            // membuat objek dari class Karyawan
                             Karyawan karyawan = new Karyawan(id, gaji, nama, posisi, divisi);
                             perusahaan.tambahKaryawan(id, karyawan);
                         } catch(NumberFormatException e) {

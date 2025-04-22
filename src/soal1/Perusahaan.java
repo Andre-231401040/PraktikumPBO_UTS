@@ -4,13 +4,17 @@ import java.util.Map;
 import java.util.HashMap;
 import java.text.DecimalFormat;
 
+// deklarasi class Perusahaan
 public class Perusahaan {
+    // menggunakan map untuk menyimpan daftar karyawan
     public Map<Integer, Karyawan> daftarKaryawan;
 
+    // constructor class Perusahaan untuk menginisialisasi daftarKaryawan
     public Perusahaan() {
         daftarKaryawan = new HashMap<>();
     }
 
+    // fungsi untuk menambah karyawan ke dalam map dengan id sebagai key dan objek karyawan sebagai value
     public void tambahKaryawan(int id, Karyawan karyawan) {
         if(karyawan.getGaji() >= 0) { // memastikan gaji tidak negatif
             daftarKaryawan.put(id++, karyawan);
@@ -22,6 +26,7 @@ public class Perusahaan {
         System.out.println();
     }
 
+    // fungsi untuk menghapus data karyawan dari map berdasarkan id
     public void hapusKaryawan(int id) {
         if(daftarKaryawan.get(id) != null) {
             daftarKaryawan.remove(id);
@@ -33,9 +38,10 @@ public class Perusahaan {
         System.out.println();
     }
 
+    // fungsi untuk mengubah posisi karyawan berdasarkan id
     public void ubahPosisiKaryawan(int id, String posisiBaru) {
         if(daftarKaryawan.get(id) != null) {
-            // memperbarui posisi karyawan berdasarkan ID
+            // mengubah posisi karyawan
             Karyawan karyawan = daftarKaryawan.get(id);
             daftarKaryawan.remove(id);
             karyawan.setPosisi(posisiBaru);
@@ -48,10 +54,11 @@ public class Perusahaan {
         System.out.println();
     }
 
+    // fungsi untuk mengubah gaji karyawan berdasarkan id
     public void ubahGajiKaryawan(int id, float gajiBaru) {
         if(daftarKaryawan.get(id) != null) {
             if(gajiBaru >= 0) {
-                // memperbarui gaji karyawan berdasarkan ID
+                // mengubah gaji karyawan
                 Karyawan karyawan = daftarKaryawan.get(id);
                 daftarKaryawan.remove(id);
                 karyawan.setGaji(gajiBaru);
@@ -67,8 +74,10 @@ public class Perusahaan {
         System.out.println();
     }
 
+    // fungsi untuk menampilkan semua data karyawan
     public void tampilkanSemuaKaryawan() {
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        // %-angkas untuk mengatur panjang karakter setiap kolom
         System.out.printf("%-3s %-40s %-20s %-40s %-10s\n", "No", "Nama", "Divisi", "Posisi", "Gaji");
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
 
@@ -88,6 +97,7 @@ public class Perusahaan {
         System.out.println();
     }
 
+    // fungsi untuk mencari karyawan berdasarkan id
     public void cariKaryawan(int id) {
         if(daftarKaryawan.get(id) != null) {
             Karyawan karyawan = daftarKaryawan.get(id);
