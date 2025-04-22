@@ -41,7 +41,6 @@ public class Main {
 
                             Karyawan karyawan = new Karyawan(id, gaji, nama, posisi, divisi);
                             perusahaan.tambahKaryawan(id, karyawan);
-                            id++;
                         } catch(NumberFormatException e) {
                             System.out.println("Gaji yang anda masukkan tidak valid (bukan angka).");
                             System.out.println();

@@ -13,7 +13,7 @@ public class Perusahaan {
 
     public void tambahKaryawan(int id, Karyawan karyawan) {
         if(karyawan.getGaji() >= 0) { // memastikan gaji tidak negatif
-            daftarKaryawan.put(id, karyawan);
+            daftarKaryawan.put(id++, karyawan);
             System.out.println("Karyawan baru berhasil ditambahkan.");
         } else {
             System.out.println("Gaji yang anda masukkan tidak valid (negatif).");
