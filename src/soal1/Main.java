@@ -47,8 +47,14 @@ public class Main {
                             gaji = Float.parseFloat(scanner.nextLine());
 
                             // membuat objek dari class Karyawan
-                            Karyawan karyawan = new Karyawan(id, gaji, nama, posisi, divisi);
-                            perusahaan.tambahKaryawan(id, karyawan);
+                            if(gaji >= 0) { // memastikan gaji tidak negatif
+                                Karyawan karyawan = new Karyawan(id, gaji, nama, posisi, divisi); // inisialisasi objek karyawan
+                                perusahaan.tambahKaryawan(id++, karyawan);
+                                System.out.println("Karyawan baru berhasil ditambahkan.");
+                            } else {
+                                System.out.println("Gaji yang anda masukkan tidak valid (negatif).");
+                            }
+                            System.out.println();
                         } catch(NumberFormatException e) {
                             System.out.println("Gaji yang anda masukkan tidak valid (bukan angka).");
                             System.out.println();

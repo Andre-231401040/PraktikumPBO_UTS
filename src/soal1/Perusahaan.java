@@ -16,14 +16,7 @@ public class Perusahaan {
 
     // fungsi untuk menambah karyawan ke dalam map dengan id sebagai key dan objek karyawan sebagai value
     public void tambahKaryawan(int id, Karyawan karyawan) {
-        if(karyawan.getGaji() >= 0) { // memastikan gaji tidak negatif
-            daftarKaryawan.put(id++, karyawan);
-            System.out.println("Karyawan baru berhasil ditambahkan.");
-        } else {
-            System.out.println("Gaji yang anda masukkan tidak valid (negatif).");
-        }
-
-        System.out.println();
+        daftarKaryawan.put(id, karyawan);
     }
 
     // fungsi untuk menghapus data karyawan dari map berdasarkan id

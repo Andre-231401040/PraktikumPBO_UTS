@@ -24,7 +24,7 @@ public class Karyawan {
     }
 
     // fungsi untuk mengatur nilai dari atribut id
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -44,7 +44,7 @@ public class Karyawan {
     }
 
     // fungsi untuk mengatur nilai dari atribut nama
-    public void setNama(String nama) {
+    private void setNama(String nama) {
         this.nama = nama;
     }
 
@@ -64,7 +64,7 @@ public class Karyawan {
     }
 
     // fungsi untuk mengatur nilai dari atribut divisi
-    public void setDivisi(String divisi) {
+    private void setDivisi(String divisi) {
         this.divisi = divisi;
     }
 }
